@@ -1,0 +1,59 @@
+<div class="login-container">
+
+    <section id="login-form" class="login-form"  [formGroup]="loginForm">
+
+        <h1 class="mb-4 text-center">Login Form</h1>
+        <h2 class="mb-16 text-center">Please fill up your credentials to log in.</h2>
+
+        <!-- <div class="mb-8  " *ngFor="let object of loginForm.controls | keyvalue">
+            <ng-container [ngSwitch]="object.key">
+
+                <span  *ngSwitchCase="'Username'" class="p-float-label">
+                    <input id="{{object.key}}-input" type="text" formControlName="{{object.key}}" class="w-full"
+                        pInputText>
+                    <label for="{{object.key}}-input">{{object.key}}
+                        <span class="red" *ngIf="object.value.hasValidator(requiredValidator)">*</span>
+                    </label>
+                </span>
+
+                <span *ngSwitchCase="'Password'" class="p-float-label">
+                    <p-password styleClass="w-full" formControlName="{{object.key}}" inputStyleClass="w-full"
+                        inputId="{{object.key}}-input" [feedback]="false"></p-password>
+                    <label for="{{object.key}}-input">{{object.key}}
+                        <span class="red" *ngIf="object.value.hasValidator(requiredValidator)">*</span>
+                    </label>
+
+
+                </span>
+             
+               
+            </ng-container>
+        </div> -->
+            <span class="p-float-label mb-8" >
+                <input id="Username-input" type="text" formControlName="Username"  class="w-full"
+                    pInputText>
+                <label for="Username-input">Username
+                    <span class="red">*</span>
+                </label>
+                <h6 class="error w-full" *ngIf="ErrorMessage ">{{ErrorTextUsername}}</h6>
+            </span>
+
+            <span  class="p-float-label mb-8"  >
+                <p-password styleClass="w-full" formControlName="Password"  inputStyleClass="w-full"
+                    inputId="Password-input" [feedback]="false"></p-password>
+                <label for="Password-input">Password
+                    <span class="red">*</span>
+                </label>
+                <h6 class="error w-full" *ngIf="ErrorMessage ">{{ErrorTextPassword}}</h6>
+
+            </span>
+         
+          
+        <div class="text-center">
+            <button pButton type="button" label="Log In"  
+             [disabled]="loginForm.invalid"    class="p-button-sm"></button>
+                
+        </div>
+
+    </section>
+</div>

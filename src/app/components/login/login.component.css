@@ -12,3 +12,15 @@
     border-radius: 5px;
 }
 
+.formControl{
+    
+    display: flex ;
+    flex-direction: column-reverse ;
+}
+
+h6{
+   font-weight: lighter; 
+}
+.error{
+    color:red;
+}

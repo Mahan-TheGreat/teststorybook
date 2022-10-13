@@ -1,43 +1,75 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import { moduleMetadata } from '@storybook/angular'
-import SignupForm from './login.component';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
+import LoginComponent, { ILoginForm } from 'src/app/components/login/login.component';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CommonModule } from '@angular/common';
+
 
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Example/SignupForm',
-  component: SignupForm,
+  title: 'Forms/LoginForm',
+  component: LoginComponent,
   decorators: [
     moduleMetadata({
-      imports: [ButtonModule, InputTextModule, PasswordModule, DividerModule]
+      declarations: [
+      ],
+      imports: [
+        CommonModule,
+        ButtonModule,
+        InputTextModule,
+        PasswordModule,
+        DividerModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+
+      ]
     })
   ],
   // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
   argTypes: {
-    UserName: { control: '' },
-    Password: { control: '' },
+  
   },
 } as Meta;
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
-const Template: Story<SignupForm> = (args: SignupForm) => ({
+const Template: Story<LoginComponent> = (args: LoginComponent) => ({
   props: args,
 });
 
 
 
 
-export const UserName = Template.bind({});
-UserName.args = {
-  UserName: '',
-};
+// export const Default = Template.bind({});
+// Default.args = {
+//   loginForm: new FormGroup<ILoginForm>({
+//     Username: new FormControl(''),
+//     Password: new FormControl('')
+//   })
+// };
 
-export const Password = Template.bind({});
-Password.args = {
-  Password: '',
+// export const Invalid = Template.bind({});
+// Invalid.args = {
+//   loginForm: new FormGroup<ILoginForm>({
+//     Username: new FormControl('abc'),
+//     Password: new FormControl('')
+//   })
+// };
+
+export const Valid = Template.bind({});
+Valid.args = {
+
+};
+export const Invalid = Template.bind({});
+Invalid.args = {
+    ErrorMessage:true,
+    ErrorTextUsername:'Username is required!' ,
+    ErrorTextPassword:'Password is required!' 
+
 };
