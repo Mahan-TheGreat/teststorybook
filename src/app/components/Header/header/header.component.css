@@ -1,0 +1,57 @@
+header{
+    width: 100vw;
+    height:10vh;
+    padding: 0.1em;
+    background-color: bisque;
+    color:black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header ul{
+    
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+header ul li{
+    list-style: none;
+    cursor: pointer;
+}
+
+#header-user-status-logged{
+    font-weight: 700;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#header-user-status-logged span{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:purple;
+    padding: 0.2em;;
+    border-radius: 15px;
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5em;
+}
+
+.header-user-status-button{
+    margin-left: 1em;
+}
+
+#userPicture-nav-bar{
+    position: relative;
+}
+
+#userPicture-nav-bar-notificationCount{
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    color:firebrick;
+}

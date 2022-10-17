@@ -4,7 +4,7 @@
         {
             "name": "ILoginForm",
             "id": "interface-ILoginForm-5735379fbaba1e7bd90bb351ab7a2ff849e9bf85b8f0287e4dc78fe1160a9b40e8f6ca5b46999148f0186407dd73784e1e16d61698b3aaf76ee4ceb095676839",
-            "file": "src/app/components/login/login.component.ts",
+            "file": "src/app/components/Login/login.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -129,12 +129,93 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!-- <app-login></app-login> -->\r\n<app-register></app-register>"
+            "templateData": "<!-- <app-login></app-login> -->\r\n<!-- <app-register></app-register> -->\r\n<app-header></app-header>"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-bf5f7f7cfb370a07e6f56cea5cb7c91545e108284b3c4bd27aa950abde2d241c2d4b92bb79df4119713124e23bcada13d0011902ba44ffba2ae6bdeac16c62c9",
+            "file": "src/app/components/Header/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [
+                "./header.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isLoggedIn",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "user",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.css']\n})\nexport class HeaderComponent implements OnInit {\n\n@Input()\n  user=''\n\n  @Input()\n  isLoggedIn=false\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "header{\r\n    width: 100vw;\r\n    height:10vh;\r\n    padding: 0.1em;\r\n    background-color: black;\r\n    color:snow;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n}\r\n\r\nheader ul{\r\n    \r\n    display: flex;\r\n    justify-content: space-around;\r\n    width: 60%;\r\n}\r\n\r\nheader ul li{\r\n    list-style: none;\r\n}",
+                    "styleUrl": "./header.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 14
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<header>\n    <ul>\n        <li>Link1</li>\n        <li>Link1</li>\n        <li>Link1</li>\n        <li>Link1</li>\n    </ul>\n    <div>\n        <span *ngIf=\"isLoggedIn\">\n             {{user}}\n            <span id=\"userPicture-nav-bar\"></span>\n            <button pButton type=\"button\" label=\"Log Out\"  \n              class=\"p-button-sm\"></button>\n        </span>\n        <span *ngIf=\"!isLoggedIn\">\n            <button pButton type=\"button\" label=\"Log In\"  \n              class=\"p-button-sm\"></button>\n        </span>\n        \n    </div>\n\n\n</header>"
         },
         {
             "name": "LoginComponent",
             "id": "component-LoginComponent-5735379fbaba1e7bd90bb351ab7a2ff849e9bf85b8f0287e4dc78fe1160a9b40e8f6ca5b46999148f0186407dd73784e1e16d61698b3aaf76ee4ceb095676839",
-            "file": "src/app/components/login/login.component.ts",
+            "file": "src/app/components/Login/login.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -251,7 +332,7 @@
         {
             "name": "RegisterComponent",
             "id": "component-RegisterComponent-cb240978a47b9a48abd06b515f45a6d418ac2ee4397128abc2d78348dd340736f02aa6ff8f4f11540f7265c4bdf22aa7fb63614e330f945ce38b2515172c576a",
-            "file": "src/app/components/Register/register/register.component.ts",
+            "file": "src/app/components/Register/register.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -383,7 +464,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".register-container {\r\n    height: 100vh;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: #d5d5d5;\r\n}\r\n\r\n.register-form {\r\n    background-color: #fff;\r\n    padding: 5rem;\r\n    border-radius: 5px;\r\n}\r\n\r\n.error{\r\n    color:red;\r\n}\r\n",
+                    "data": ".register-container {\r\n    height: 100vh;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: #d5d5d5;\r\n}\r\n\r\n.register-form {\r\n    background-color: #fff;\r\n    padding: 5rem;\r\n    border-radius: 5px;\r\n}\r\n\r\n.error{\r\n    color:red;\r\n    max-width: 80%;\r\n}\r\n\r\n#registerForm-password-requirements-header{\r\n    color:brown;\r\n}\r\n#registerForm-password-requirements{\r\n    line-height: 1.5;\r\n    color: gray;\r\n    list-style: none;\r\n}\r\n",
                     "styleUrl": "./register.component.css"
                 }
             ],
@@ -444,19 +525,19 @@
                     }
                 }
             },
-            "templateData": "<div class=\"register-container\">\n\n    <section id=\"register-form\" class=\"register-form\"  [formGroup]=\"registerForm\">\n\n        <h1 class=\"mb-4 text-center\">Register Form</h1>\n        <h2 class=\"mb-16 text-center\">Please fill up your credentials to Register.</h2>\n            <span class=\"p-float-label mb-8\" >\n                <input id=\"FirstName-input\" type=\"text\" formControlName=\"FirstName\"  class=\"w-full\"\n                    pInputText>\n                <label for=\"FirstName-input\">FirstName\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessageFirstName \">{{ErrorTextFirstName}}</h6>\n            </span>\n\n            <span class=\"p-float-label mb-8\" >\n                <input id=\"LastName-input\" type=\"text\" formControlName=\"LastName\"  class=\"w-full\"\n                    pInputText>\n                <label for=\"LastName-input\">LastName\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessageLastName \">{{ErrorTextLastName}}</h6>\n            </span>\n\n            <span  class=\"p-float-label mb-8\"  >\n                <input type=\"email\" formControlName=\"Email\"  class=\"w-full\"\n                    inputId=\"Email-input\" pInputText>\n                <label for=\"Email-input\">Email\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessageEmail \">{{ErrorTextEmail}}</h6>\n            </span>\n\n            <span  class=\"p-float-label mb-8\"  >\n                <p-password styleClass=\"w-full\" formControlName=\"Password\"  inputStyleClass=\"w-full\"\n                    inputId=\"Password-input\" [feedback]=\"false\"></p-password>\n                <label for=\"Password-input\">Password\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessagePssword \">{{ErrorTextPassword}}</h6>\n            </span>\n\n            <span  class=\"p-float-label mb-8\"  >\n                <p-password styleClass=\"w-full\" formControlName=\"ConfirmPassword\"  inputStyleClass=\"w-full\"\n                    inputId=\"Confirm-Password-input\" [feedback]=\"false\"></p-password>\n                <label for=\"Confirm-Password-input\">Confirm Password\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessageConfirmPassword \">{{ErrorTextConfirmPassword}}</h6>\n            </span>\n          \n        <div class=\"text-center\">\n            <button pButton type=\"button\" label=\"Sign Up\"  \n            [disabled]=\"registerForm.invalid\"    class=\"p-button-sm\"></button>      \n        </div>\n\n    </section>\n</div>"
+            "templateData": "<div class=\"register-container\">\n\n    <section id=\"register-form\" class=\"register-form\"  [formGroup]=\"registerForm\">\n\n        <h1 class=\"mb-4 text-center\">Register Form</h1>\n        <h2 class=\"mb-16 text-center\">Please fill up your credentials to Register.</h2>\n            <span class=\"p-float-label mb-8\" >\n                <input id=\"FirstName-input\" type=\"text\" formControlName=\"FirstName\"  class=\"w-full\"\n                    pInputText>\n                <label for=\"FirstName-input\">First Name\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error\" *ngIf=\"ErrorMessageFirstName \">{{ErrorTextFirstName}}</h6>\n            </span>\n\n            <span class=\"p-float-label mb-8\" >\n                <input id=\"LastName-input\" type=\"text\" formControlName=\"LastName\"  class=\"w-full\"\n                    pInputText>\n                <label for=\"LastName-input\">Last Name\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error \" *ngIf=\"ErrorMessageLastName \">{{ErrorTextLastName}}</h6>\n            </span>\n\n            <span  class=\"p-float-label mb-8\"  >\n                <input type=\"email\" formControlName=\"Email\"  class=\"w-full\"\n                    inputId=\"Email-input\" pInputText>\n                <label for=\"Email-input\">Email\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error\" *ngIf=\"ErrorMessageEmail \">{{ErrorTextEmail}}</h6>\n            </span>\n\n            <span  class=\"p-float-label mb-8\"  >\n                <p-password styleClass=\"w-full\" formControlName=\"Password\"  inputStyleClass=\"w-full\"\n                    inputId=\"Password-input\">\n                    <ng-template pTemplate=\"footer\">\n                        <p-divider></p-divider>\n                        <p id=\"registerForm-password-requirements-header\" class=\"mt-2\" >Password must contain</p>\n                        <ul id=\"registerForm-password-requirements\" class=\"pl-2 ml-2 mt-0\">\n                            <li>At least one lowercase</li>\n                            <li>At least one uppercase</li>\n                            <li>At least one numeric</li>\n                            <li>Minimum 8 characters</li>\n                        </ul>\n                    </ng-template>\n                </p-password>\n                <label for=\"Password-input\">Password\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error\" *ngIf=\"ErrorMessagePssword \">{{ErrorTextPassword}}</h6>\n            </span>\n\n            <span  class=\"p-float-label mb-8\"  >\n                <p-password styleClass=\"w-full\" formControlName=\"ConfirmPassword\"  inputStyleClass=\"w-full\"\n                    inputId=\"Confirm-Password-input\" [feedback]=\"false\">\n                </p-password>\n                <label for=\"Confirm-Password-input\">Confirm Password\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error \" *ngIf=\"ErrorMessageConfirmPassword \">{{ErrorTextConfirmPassword}}</h6>\n            </span>\n          \n        <div class=\"text-center\">\n            <button pButton type=\"button\" label=\"Sign Up\"  \n            [disabled]=\"registerForm.invalid\"    class=\"p-button-sm\"></button>      \n        </div>\n\n    </section>\n</div>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-dccc726cb72611be26cee2725130dbbfcc9c9a7e98fdd7fd94a51532e41e8db797a9587a74f04c761be5957c9c6a90c6e76c3a5a385f49251b8254f6bc806958",
+            "id": "module-AppModule-4288fd44840ea97dd7f834ff572a81a9b61ee53ecd12f17c8ba35ba647ff474fc2ae8ccff0f201102d5b9a6e61c4ec60a7e3287a21e0bf59e0a181126fda703d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { BrowserModule } from '@angular/platform-browser';\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n\n// Component Imports\n\nimport LoginComponent from 'src/app/components/login/login.component';\nimport { RegisterComponent } from './components/Register/register/register.component';\n\n\n// primeng imports\n\nimport { ButtonModule } from 'primeng/button';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { PasswordModule } from 'primeng/password';\nimport { DividerModule } from 'primeng/divider'\n\n\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    LoginComponent,\n    RegisterComponent\n    ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    AppRoutingModule,\n    FormsModule,\n    ReactiveFormsModule,\n    BrowserAnimationsModule,\n    ButtonModule,\n    InputTextModule,\n    PasswordModule,\n    DividerModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { BrowserModule } from '@angular/platform-browser';\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n\n// Component Imports\n\nimport LoginComponent from 'src/app/components/Login/login.component';\nimport { RegisterComponent } from './components/Register/register.component';\n\n\n// primeng imports\n\nimport { ButtonModule } from 'primeng/button';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { PasswordModule } from 'primeng/password';\nimport { DividerModule } from 'primeng/divider';\nimport { HeaderComponent } from './components/Header/header/header.component'\n\n\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    LoginComponent,\n    RegisterComponent,\n    HeaderComponent\n    ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    AppRoutingModule,\n    FormsModule,\n    ReactiveFormsModule,\n    BrowserAnimationsModule,\n    ButtonModule,\n    InputTextModule,\n    PasswordModule,\n    DividerModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -467,6 +548,9 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "HeaderComponent"
                         },
                         {
                             "name": "LoginComponent"
@@ -592,6 +676,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "LoggedInHeader",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/header.stories..ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "NotLoggedInHeader",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/header.stories..ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -599,6 +703,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/header.stories..ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -753,6 +867,38 @@
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 }
+            ],
+            "src/stories/header.stories..ts": [
+                {
+                    "name": "LoggedInHeader",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/header.stories..ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "NotLoggedInHeader",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/header.stories..ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/header.stories..ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<HeaderComponent>",
+                    "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -787,16 +933,16 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/Register/register/register.component.ts",
+                "filePath": "src/app/components/Header/header/header.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "RegisterComponent",
+                "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/login/login.component.ts",
+                "filePath": "src/app/components/Login/login.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "LoginComponent",
@@ -805,12 +951,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/login/login.component.ts",
+                "filePath": "src/app/components/Login/login.component.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "ILoginForm",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/Register/register.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RegisterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -829,6 +984,36 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/header.stories..ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedInHeader",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/header.stories..ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NotLoggedInHeader",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/header.stories..ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

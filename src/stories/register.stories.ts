@@ -11,7 +11,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 
-import { RegisterComponent } from 'src/app/components/Register/register/register.component';
+import { RegisterComponent } from 'src/app/components/Register/register.component';
 
 
 

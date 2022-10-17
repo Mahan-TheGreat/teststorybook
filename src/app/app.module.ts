@@ -11,8 +11,8 @@ import { AppComponent } from './app.component';
 
 // Component Imports
 
-import LoginComponent from 'src/app/components/login/login.component';
-import { RegisterComponent } from './components/Register/register/register.component';
+import LoginComponent from 'src/app/components/Login/login.component';
+import { RegisterComponent } from './components/Register/register.component';
 
 
 // primeng imports
@@ -20,7 +20,8 @@ import { RegisterComponent } from './components/Register/register/register.compo
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
-import { DividerModule } from 'primeng/divider'
+import { DividerModule } from 'primeng/divider';
+import { HeaderComponent } from './components/Header/header/header.component'
 
 
 
@@ -28,7 +29,8 @@ import { DividerModule } from 'primeng/divider'
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent
     ],
   imports: [
     BrowserModule,
