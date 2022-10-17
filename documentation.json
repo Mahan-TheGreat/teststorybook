@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "ILoginForm",
-            "id": "interface-ILoginForm-76ca95ec981c4669adc08a2fec6230a74185c321737b182eec9dc1e2f57cd0e3fe95eebdf065d67c1f286136ecdf762a9f6b543525aae5504ba1e02b2298cf37",
+            "id": "interface-ILoginForm-5735379fbaba1e7bd90bb351ab7a2ff849e9bf85b8f0287e4dc78fe1160a9b40e8f6ca5b46999148f0186407dd73784e1e16d61698b3aaf76ee4ceb095676839",
             "file": "src/app/components/login/login.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport {  FormControl, FormGroup, Validators } from '@angular/forms';\r\n\r\n\r\nexport interface ILoginForm {\r\n  Username: FormControl;\r\n  Password: FormControl;\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.css'],\r\n})\r\nexport default class LoginComponent {\r\n\r\n  constructor(){\r\n  }\r\n  \r\n   requiredValidator = Validators.required;\r\n  \r\n  // @Input()\r\n  loginForm = new FormGroup<ILoginForm>({\r\n    Username: new FormControl('', { nonNullable: true, validators: [Validators.required] }),\r\n    Password: new FormControl('', { nonNullable: true, validators: [Validators.required] })\r\n  });\r\n\r\n  @Input()\r\n  ErrorMessage=false;\r\n\r\n  get Username(){ return this.loginForm.get('Username');}   \r\n  get Password(){ return this.loginForm.get('Password');}   \r\n\r\n  // loginFormStruct: LoginForm = {\r\n  //   username: {\r\n  //     isRequired: true,\r\n  //     minLength: 3,\r\n  //     fieldType: 'string',\r\n  //     fieldName: 'username',\r\n  //   },\r\n  //   password: {\r\n  //     isRequired: true,\r\n  //     minLength: 6,\r\n  //     maxLength: 20,\r\n  //     fieldType: 'password',\r\n  //     fieldName: 'password',\r\n  //   }\r\n  // }\r\n\r\n  // handleClick(){\r\n  //   console.log(this.loginForm.value);\r\n  // }\r\n}\r\n\r\n\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport {  FormControl, FormGroup, Validators } from '@angular/forms';\r\n\r\n\r\nexport interface ILoginForm {\r\n  Username: FormControl;\r\n  Password: FormControl;\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.css'],\r\n})\r\nexport default class LoginComponent {\r\n\r\n  constructor(){\r\n  }\r\n  \r\n   requiredValidator = Validators.required;\r\n  \r\n  // @Input()\r\n  loginForm = new FormGroup<ILoginForm>({\r\n    Username: new FormControl('', { nonNullable: true, validators: [Validators.required] }),\r\n    Password: new FormControl('', { nonNullable: true, validators: [Validators.required] })\r\n  });\r\n\r\n  @Input()\r\n  ErrorMessage=false;\r\n\r\n  @Input()\r\n  ErrorTextUsername = ''\r\n\r\n  @Input()\r\n  ErrorTextPassword = ''\r\n\r\n  get Username(){ return this.loginForm.get('Username');}   \r\n  get Password(){ return this.loginForm.get('Password');}   \r\n\r\n  // loginFormStruct: LoginForm = {\r\n  //   username: {\r\n  //     isRequired: true,\r\n  //     minLength: 3,\r\n  //     fieldType: 'string',\r\n  //     fieldName: 'username',\r\n  //   },\r\n  //   password: {\r\n  //     isRequired: true,\r\n  //     minLength: 6,\r\n  //     maxLength: 20,\r\n  //     fieldType: 'password',\r\n  //     fieldName: 'password',\r\n  //   }\r\n  // }\r\n\r\n  // handleClick(){\r\n  //   console.log(this.loginForm.value);\r\n  // }\r\n}\r\n\r\n\r\n",
             "properties": [
                 {
                     "name": "Password",
@@ -129,11 +129,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-login></app-login>"
+            "templateData": "<!-- <app-login></app-login> -->\r\n<app-register></app-register>"
         },
         {
             "name": "LoginComponent",
-            "id": "component-LoginComponent-76ca95ec981c4669adc08a2fec6230a74185c321737b182eec9dc1e2f57cd0e3fe95eebdf065d67c1f286136ecdf762a9f6b543525aae5504ba1e02b2298cf37",
+            "id": "component-LoginComponent-5735379fbaba1e7bd90bb351ab7a2ff849e9bf85b8f0287e4dc78fe1160a9b40e8f6ca5b46999148f0186407dd73784e1e16d61698b3aaf76ee4ceb095676839",
             "file": "src/app/components/login/login.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -157,6 +157,24 @@
                     "deprecationMessage": "",
                     "line": 30,
                     "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "ErrorTextPassword",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "ErrorTextUsername",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "string",
                     "decorators": []
                 }
             ],
@@ -191,11 +209,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport {  FormControl, FormGroup, Validators } from '@angular/forms';\r\n\r\n\r\nexport interface ILoginForm {\r\n  Username: FormControl;\r\n  Password: FormControl;\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.css'],\r\n})\r\nexport default class LoginComponent {\r\n\r\n  constructor(){\r\n  }\r\n  \r\n   requiredValidator = Validators.required;\r\n  \r\n  // @Input()\r\n  loginForm = new FormGroup<ILoginForm>({\r\n    Username: new FormControl('', { nonNullable: true, validators: [Validators.required] }),\r\n    Password: new FormControl('', { nonNullable: true, validators: [Validators.required] })\r\n  });\r\n\r\n  @Input()\r\n  ErrorMessage=false;\r\n\r\n  get Username(){ return this.loginForm.get('Username');}   \r\n  get Password(){ return this.loginForm.get('Password');}   \r\n\r\n  // loginFormStruct: LoginForm = {\r\n  //   username: {\r\n  //     isRequired: true,\r\n  //     minLength: 3,\r\n  //     fieldType: 'string',\r\n  //     fieldName: 'username',\r\n  //   },\r\n  //   password: {\r\n  //     isRequired: true,\r\n  //     minLength: 6,\r\n  //     maxLength: 20,\r\n  //     fieldType: 'password',\r\n  //     fieldName: 'password',\r\n  //   }\r\n  // }\r\n\r\n  // handleClick(){\r\n  //   console.log(this.loginForm.value);\r\n  // }\r\n}\r\n\r\n\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport {  FormControl, FormGroup, Validators } from '@angular/forms';\r\n\r\n\r\nexport interface ILoginForm {\r\n  Username: FormControl;\r\n  Password: FormControl;\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.css'],\r\n})\r\nexport default class LoginComponent {\r\n\r\n  constructor(){\r\n  }\r\n  \r\n   requiredValidator = Validators.required;\r\n  \r\n  // @Input()\r\n  loginForm = new FormGroup<ILoginForm>({\r\n    Username: new FormControl('', { nonNullable: true, validators: [Validators.required] }),\r\n    Password: new FormControl('', { nonNullable: true, validators: [Validators.required] })\r\n  });\r\n\r\n  @Input()\r\n  ErrorMessage=false;\r\n\r\n  @Input()\r\n  ErrorTextUsername = ''\r\n\r\n  @Input()\r\n  ErrorTextPassword = ''\r\n\r\n  get Username(){ return this.loginForm.get('Username');}   \r\n  get Password(){ return this.loginForm.get('Password');}   \r\n\r\n  // loginFormStruct: LoginForm = {\r\n  //   username: {\r\n  //     isRequired: true,\r\n  //     minLength: 3,\r\n  //     fieldType: 'string',\r\n  //     fieldName: 'username',\r\n  //   },\r\n  //   password: {\r\n  //     isRequired: true,\r\n  //     minLength: 6,\r\n  //     maxLength: 20,\r\n  //     fieldType: 'password',\r\n  //     fieldName: 'password',\r\n  //   }\r\n  // }\r\n\r\n  // handleClick(){\r\n  //   console.log(this.loginForm.value);\r\n  // }\r\n}\r\n\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".login-container {\r\n    height: 100vh;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: #d5d5d5;\r\n}\r\n\r\n.login-form {\r\n    background-color: #fff;\r\n    padding: 5rem;\r\n    border-radius: 5px;\r\n}\r\n\r\n.formControl{\r\n    \r\n    display: flex ;\r\n    flex-direction: column-reverse ;\r\n}\r\n\r\nh6{\r\n   font-weight: lighter; \r\n}\r\n.error{\r\n    color:red;\r\n}\r\n",
+                    "data": ".login-container {\r\n    height: 100vh;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: #d5d5d5;\r\n}\r\n\r\n.login-form {\r\n    background-color: #fff;\r\n    padding: 5rem;\r\n    border-radius: 5px;\r\n}\r\n\r\n.error{\r\n    color:red;\r\n}\r\n",
                     "styleUrl": "./login.component.css"
                 }
             ],
@@ -215,7 +233,7 @@
                         "name": "Username",
                         "type": "",
                         "returnType": "",
-                        "line": 32
+                        "line": 38
                     }
                 },
                 "Password": {
@@ -224,23 +242,221 @@
                         "name": "Password",
                         "type": "",
                         "returnType": "",
-                        "line": 33
+                        "line": 39
                     }
                 }
             },
-            "templateData": "<div class=\"login-container\">\r\n\r\n    <section id=\"login-form\" class=\"login-form\"  [formGroup]=\"loginForm\">\r\n\r\n        <h1 class=\"mb-4 text-center\">Login Form</h1>\r\n        <h2 class=\"mb-16 text-center\">Please fill up your credentials to log in.</h2>\r\n\r\n        <!-- <div class=\"mb-8  \" *ngFor=\"let object of loginForm.controls | keyvalue\">\r\n            <ng-container [ngSwitch]=\"object.key\">\r\n\r\n                <span  *ngSwitchCase=\"'Username'\" class=\"p-float-label\">\r\n                    <input id=\"{{object.key}}-input\" type=\"text\" formControlName=\"{{object.key}}\" class=\"w-full\"\r\n                        pInputText>\r\n                    <label for=\"{{object.key}}-input\">{{object.key}}\r\n                        <span class=\"red\" *ngIf=\"object.value.hasValidator(requiredValidator)\">*</span>\r\n                    </label>\r\n                </span>\r\n\r\n                <span *ngSwitchCase=\"'Password'\" class=\"p-float-label\">\r\n                    <p-password styleClass=\"w-full\" formControlName=\"{{object.key}}\" inputStyleClass=\"w-full\"\r\n                        inputId=\"{{object.key}}-input\" [feedback]=\"false\"></p-password>\r\n                    <label for=\"{{object.key}}-input\">{{object.key}}\r\n                        <span class=\"red\" *ngIf=\"object.value.hasValidator(requiredValidator)\">*</span>\r\n                    </label>\r\n\r\n\r\n                </span>\r\n             \r\n               \r\n            </ng-container>\r\n        </div> -->\r\n            <span class=\"p-float-label mb-8\" >\r\n                <input id=\"Username-input\" type=\"text\" formControlName=\"Username\"  class=\"w-full\"\r\n                    pInputText>\r\n                <label for=\"Username-input\">Username\r\n                    <span class=\"red\">*</span>\r\n                </label>\r\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessage || (Username?.touched && Username?.invalid)\">Username is required.</h6>\r\n            </span>\r\n\r\n            <span  class=\"p-float-label mb-8\"  >\r\n                <p-password styleClass=\"w-full\" formControlName=\"Password\"  inputStyleClass=\"w-full\"\r\n                    inputId=\"Password-input\" [feedback]=\"false\"></p-password>\r\n                <label for=\"Password-input\">Password\r\n                    <span class=\"red\">*</span>\r\n                </label>\r\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessage || (Password?.touched && Password?.invalid)\">Password is required.</h6>\r\n\r\n            </span>\r\n         \r\n          \r\n        <div class=\"text-center\">\r\n            <button pButton type=\"button\" label=\"Log In\"  \r\n             [disabled]=\"loginForm.invalid\"    class=\"p-button-sm\"></button>\r\n                \r\n        </div>\r\n\r\n    </section>\r\n</div>"
+            "templateData": "<div class=\"login-container\">\r\n\r\n    <section id=\"login-form\" class=\"login-form\"  [formGroup]=\"loginForm\">\r\n\r\n        <h1 class=\"mb-4 text-center\">Login Form</h1>\r\n        <h2 class=\"mb-16 text-center\">Please fill up your credentials to log in.</h2>\r\n\r\n        <!-- <div class=\"mb-8  \" *ngFor=\"let object of loginForm.controls | keyvalue\">\r\n            <ng-container [ngSwitch]=\"object.key\">\r\n\r\n                <span  *ngSwitchCase=\"'Username'\" class=\"p-float-label\">\r\n                    <input id=\"{{object.key}}-input\" type=\"text\" formControlName=\"{{object.key}}\" class=\"w-full\"\r\n                        pInputText>\r\n                    <label for=\"{{object.key}}-input\">{{object.key}}\r\n                        <span class=\"red\" *ngIf=\"object.value.hasValidator(requiredValidator)\">*</span>\r\n                    </label>\r\n                </span>\r\n\r\n                <span *ngSwitchCase=\"'Password'\" class=\"p-float-label\">\r\n                    <p-password styleClass=\"w-full\" formControlName=\"{{object.key}}\" inputStyleClass=\"w-full\"\r\n                        inputId=\"{{object.key}}-input\" [feedback]=\"false\"></p-password>\r\n                    <label for=\"{{object.key}}-input\">{{object.key}}\r\n                        <span class=\"red\" *ngIf=\"object.value.hasValidator(requiredValidator)\">*</span>\r\n                    </label>\r\n\r\n\r\n                </span>\r\n             \r\n               \r\n            </ng-container>\r\n        </div> -->\r\n            <span class=\"p-float-label mb-8\" >\r\n                <input id=\"Username-input\" type=\"text\" formControlName=\"Username\"  class=\"w-full\"\r\n                    pInputText>\r\n                <label for=\"Username-input\">Username\r\n                    <span class=\"red\">*</span>\r\n                </label>\r\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessage \">{{ErrorTextUsername}}</h6>\r\n            </span>\r\n\r\n            <span  class=\"p-float-label mb-8\"  >\r\n                <p-password styleClass=\"w-full\" formControlName=\"Password\"  inputStyleClass=\"w-full\"\r\n                    inputId=\"Password-input\" [feedback]=\"false\"></p-password>\r\n                <label for=\"Password-input\">Password\r\n                    <span class=\"red\">*</span>\r\n                </label>\r\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessage \">{{ErrorTextPassword}}</h6>\r\n\r\n            </span>\r\n         \r\n          \r\n        <div class=\"text-center\">\r\n            <button pButton type=\"button\" label=\"Log In\"  \r\n             [disabled]=\"loginForm.invalid\"    class=\"p-button-sm\"></button>\r\n                \r\n        </div>\r\n\r\n    </section>\r\n</div>"
+        },
+        {
+            "name": "RegisterComponent",
+            "id": "component-RegisterComponent-cb240978a47b9a48abd06b515f45a6d418ac2ee4397128abc2d78348dd340736f02aa6ff8f4f11540f7265c4bdf22aa7fb63614e330f945ce38b2515172c576a",
+            "file": "src/app/components/Register/register/register.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-register",
+            "styleUrls": [
+                "./register.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./register.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ErrorMessageConfirmPassword",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "ErrorMessageEmail",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "ErrorMessageFirstName",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "ErrorMessageLastName",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "ErrorMessagePssword",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "ErrorTextConfirmPassword",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 49,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "ErrorTextEmail",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 43,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "ErrorTextFirstName",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "ErrorTextLastName",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "ErrorTextPassword",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 46,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "registerForm",
+                    "defaultValue": "new FormGroup({\n    FirstName: new FormControl('', { nonNullable: true, validators: [Validators.required] }),\n    LastName: new FormControl('', { nonNullable: true, validators: [Validators.required] }),\n    Email: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.email] }),\n    Password: new FormControl('', { nonNullable: true, validators: [Validators.required] }),\n    ConfirmPassword: new FormControl('', { nonNullable: true, validators: [Validators.required] })\n\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { FormControl, FormGroup, Validators } from '@angular/forms';\n\n@Component({\n  selector: 'app-register',\n  templateUrl: './register.component.html',\n  styleUrls: ['./register.component.css']\n})\nexport class RegisterComponent   {\n  \n  // @Input()\n  registerForm = new FormGroup({\n    FirstName: new FormControl('', { nonNullable: true, validators: [Validators.required] }),\n    LastName: new FormControl('', { nonNullable: true, validators: [Validators.required] }),\n    Email: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.email] }),\n    Password: new FormControl('', { nonNullable: true, validators: [Validators.required] }),\n    ConfirmPassword: new FormControl('', { nonNullable: true, validators: [Validators.required] })\n\n  });\n\n  @Input()\n  ErrorMessageFirstName=false;\n\n  @Input()\n  ErrorMessageLastName=false;\n\n  @Input()\n  ErrorMessageEmail=false;\n\n  @Input()\n  ErrorMessagePssword=false;\n\n  @Input()\n  ErrorMessageConfirmPassword=false;\n\n  @Input()\n  ErrorTextFirstName = '';\n\n  @Input()\n  ErrorTextLastName = '';\n\n  @Input()\n  ErrorTextEmail = '';\n\n  @Input()\n  ErrorTextPassword = '';\n\n  @Input()\n  ErrorTextConfirmPassword = '';\n\n\n  get FirstName(){ return this.registerForm.get('FirstName');}   \n  get LastName(){ return this.registerForm.get('LastName');}   \n  get Email(){ return this.registerForm.get('Email');}   \n  get Username(){ return this.registerForm.get('Username');}   \n  get Password(){ return this.registerForm.get('Password');} \n  get ConfirmPassword(){ return this.registerForm.get('ConfirmPassword');}   \n\n\n\n\n  // handleClick(){\n  //   console.log(this.loginForm.value);\n  // }\n}\n\n\n\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".register-container {\r\n    height: 100vh;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: #d5d5d5;\r\n}\r\n\r\n.register-form {\r\n    background-color: #fff;\r\n    padding: 5rem;\r\n    border-radius: 5px;\r\n}\r\n\r\n.error{\r\n    color:red;\r\n}\r\n",
+                    "styleUrl": "./register.component.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "FirstName": {
+                    "name": "FirstName",
+                    "getSignature": {
+                        "name": "FirstName",
+                        "type": "",
+                        "returnType": "",
+                        "line": 52
+                    }
+                },
+                "LastName": {
+                    "name": "LastName",
+                    "getSignature": {
+                        "name": "LastName",
+                        "type": "",
+                        "returnType": "",
+                        "line": 53
+                    }
+                },
+                "Email": {
+                    "name": "Email",
+                    "getSignature": {
+                        "name": "Email",
+                        "type": "",
+                        "returnType": "",
+                        "line": 54
+                    }
+                },
+                "Username": {
+                    "name": "Username",
+                    "getSignature": {
+                        "name": "Username",
+                        "type": "",
+                        "returnType": "",
+                        "line": 55
+                    }
+                },
+                "Password": {
+                    "name": "Password",
+                    "getSignature": {
+                        "name": "Password",
+                        "type": "",
+                        "returnType": "",
+                        "line": 56
+                    }
+                },
+                "ConfirmPassword": {
+                    "name": "ConfirmPassword",
+                    "getSignature": {
+                        "name": "ConfirmPassword",
+                        "type": "",
+                        "returnType": "",
+                        "line": 57
+                    }
+                }
+            },
+            "templateData": "<div class=\"register-container\">\n\n    <section id=\"register-form\" class=\"register-form\"  [formGroup]=\"registerForm\">\n\n        <h1 class=\"mb-4 text-center\">Register Form</h1>\n        <h2 class=\"mb-16 text-center\">Please fill up your credentials to Register.</h2>\n            <span class=\"p-float-label mb-8\" >\n                <input id=\"FirstName-input\" type=\"text\" formControlName=\"FirstName\"  class=\"w-full\"\n                    pInputText>\n                <label for=\"FirstName-input\">FirstName\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessageFirstName \">{{ErrorTextFirstName}}</h6>\n            </span>\n\n            <span class=\"p-float-label mb-8\" >\n                <input id=\"LastName-input\" type=\"text\" formControlName=\"LastName\"  class=\"w-full\"\n                    pInputText>\n                <label for=\"LastName-input\">LastName\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessageLastName \">{{ErrorTextLastName}}</h6>\n            </span>\n\n            <span  class=\"p-float-label mb-8\"  >\n                <input type=\"email\" formControlName=\"Email\"  class=\"w-full\"\n                    inputId=\"Email-input\" pInputText>\n                <label for=\"Email-input\">Email\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessageEmail \">{{ErrorTextEmail}}</h6>\n            </span>\n\n            <span  class=\"p-float-label mb-8\"  >\n                <p-password styleClass=\"w-full\" formControlName=\"Password\"  inputStyleClass=\"w-full\"\n                    inputId=\"Password-input\" [feedback]=\"false\"></p-password>\n                <label for=\"Password-input\">Password\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessagePssword \">{{ErrorTextPassword}}</h6>\n            </span>\n\n            <span  class=\"p-float-label mb-8\"  >\n                <p-password styleClass=\"w-full\" formControlName=\"ConfirmPassword\"  inputStyleClass=\"w-full\"\n                    inputId=\"Confirm-Password-input\" [feedback]=\"false\"></p-password>\n                <label for=\"Confirm-Password-input\">Confirm Password\n                    <span class=\"red\">*</span>\n                </label>\n                <h6 class=\"error w-full\" *ngIf=\"ErrorMessageConfirmPassword \">{{ErrorTextConfirmPassword}}</h6>\n            </span>\n          \n        <div class=\"text-center\">\n            <button pButton type=\"button\" label=\"Sign Up\"  \n            [disabled]=\"registerForm.invalid\"    class=\"p-button-sm\"></button>      \n        </div>\n\n    </section>\n</div>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-3d84b3c0345e8488fe84de450e8528c1b89c27998ead19c7809115f0a7a3be91744265f139c1ac566bd4f53a17da65606283616b0d175dc27521fbb48f9f6a43",
+            "id": "module-AppModule-dccc726cb72611be26cee2725130dbbfcc9c9a7e98fdd7fd94a51532e41e8db797a9587a74f04c761be5957c9c6a90c6e76c3a5a385f49251b8254f6bc806958",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n\n// Component Imports\n\nimport LoginComponent from 'src/app/components/login/login.component';\n\n\n// primeng imports\n\nimport { ButtonModule } from 'primeng/button';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { PasswordModule } from 'primeng/password';\nimport { DividerModule } from 'primeng/divider'\nimport { CommonModule } from '@angular/common';\n\n\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    LoginComponent\n    ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    AppRoutingModule,\n    FormsModule,\n    ReactiveFormsModule,\n    BrowserAnimationsModule,\n    ButtonModule,\n    InputTextModule,\n    PasswordModule,\n    DividerModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { BrowserModule } from '@angular/platform-browser';\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n\n// Component Imports\n\nimport LoginComponent from 'src/app/components/login/login.component';\nimport { RegisterComponent } from './components/Register/register/register.component';\n\n\n// primeng imports\n\nimport { ButtonModule } from 'primeng/button';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { PasswordModule } from 'primeng/password';\nimport { DividerModule } from 'primeng/divider'\n\n\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    LoginComponent,\n    RegisterComponent\n    ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    AppRoutingModule,\n    FormsModule,\n    ReactiveFormsModule,\n    BrowserAnimationsModule,\n    ButtonModule,\n    InputTextModule,\n    PasswordModule,\n    DividerModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -254,6 +470,9 @@
                         },
                         {
                             "name": "LoginComponent"
+                        },
+                        {
+                            "name": "RegisterComponent"
                         }
                     ]
                 },
@@ -285,13 +504,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-78922b3ae99d2c5249b333980bd5afde1b120b2cc6fedfd41b8b2cc90f279797cb4b22e183bf7e1d1dfab8c6100e77e7812c110234d81f866f544f28a3e18b15",
+            "id": "module-AppRoutingModule-62791298ec658b3cb3260467101b5f33c6bfc1f30f0bc359118403878d57872bd5e5f365126f1ef14dea7bc57d29cb699db2d9b026dd4e4e7690dccc2ac3c053",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  \n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -333,14 +552,14 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
-                "name": "Default",
+                "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/login.stories.ts",
+                "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "environment",
@@ -353,20 +572,20 @@
                 "defaultValue": "{\n  production: false\n}"
             },
             {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
-            },
-            {
-                "name": "Invalid",
+                "name": "InvalidLoginForm",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/login.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "InvalidRegisterForm",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/register.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -385,11 +604,41 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/register.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<RegisterComponent>",
+                "defaultValue": "(args: RegisterComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/login.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<LoginComponent>",
                 "defaultValue": "(args: LoginComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "ValidLoginForm",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/login.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "ValidRegisterForm",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/register.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -417,19 +666,33 @@
                     "type": "literal type"
                 }
             ],
-            "src/stories/login.stories.ts": [
+            "src/environments/environment.prod.ts": [
                 {
-                    "name": "Default",
+                    "name": "environment",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/login.stories.ts",
+                    "file": "src/environments/environment.prod.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
                 {
-                    "name": "Invalid",
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/stories/login.stories.ts": [
+                {
+                    "name": "InvalidLoginForm",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/login.stories.ts",
@@ -447,30 +710,48 @@
                     "deprecationMessage": "",
                     "type": "Story<LoginComponent>",
                     "defaultValue": "(args: LoginComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/environments/environment.ts": [
+                },
                 {
-                    "name": "environment",
+                    "name": "ValidLoginForm",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.ts",
+                    "file": "src/stories/login.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/environments/environment.prod.ts": [
+            "src/stories/register.stories.ts": [
                 {
-                    "name": "environment",
+                    "name": "InvalidRegisterForm",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
+                    "file": "src/stories/register.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/register.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<RegisterComponent>",
+                    "defaultValue": "(args: RegisterComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "ValidRegisterForm",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/register.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ]
         },
@@ -506,12 +787,21 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/Register/register/register.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RegisterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/login/login.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "LoginComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -548,17 +838,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/login.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Invalid",
+                "name": "InvalidLoginForm",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -569,6 +849,46 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/login.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ValidLoginForm",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/register.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "InvalidRegisterForm",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/register.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/register.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ValidRegisterForm",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

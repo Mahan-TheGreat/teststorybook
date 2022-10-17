@@ -1,0 +1,70 @@
+<div class="register-container">
+
+    <section id="register-form" class="register-form"  [formGroup]="registerForm">
+
+        <h1 class="mb-4 text-center">Register Form</h1>
+        <h2 class="mb-16 text-center">Please fill up your credentials to Register.</h2>
+            <span class="p-float-label mb-8" >
+                <input id="FirstName-input" type="text" formControlName="FirstName"  class="w-full"
+                    pInputText>
+                <label for="FirstName-input">First Name
+                    <span class="red">*</span>
+                </label>
+                <h6 class="error" *ngIf="ErrorMessageFirstName ">{{ErrorTextFirstName}}</h6>
+            </span>
+
+            <span class="p-float-label mb-8" >
+                <input id="LastName-input" type="text" formControlName="LastName"  class="w-full"
+                    pInputText>
+                <label for="LastName-input">Last Name
+                    <span class="red">*</span>
+                </label>
+                <h6 class="error " *ngIf="ErrorMessageLastName ">{{ErrorTextLastName}}</h6>
+            </span>
+
+            <span  class="p-float-label mb-8"  >
+                <input type="email" formControlName="Email"  class="w-full"
+                    inputId="Email-input" pInputText>
+                <label for="Email-input">Email
+                    <span class="red">*</span>
+                </label>
+                <h6 class="error" *ngIf="ErrorMessageEmail ">{{ErrorTextEmail}}</h6>
+            </span>
+
+            <span  class="p-float-label mb-8"  >
+                <p-password styleClass="w-full" formControlName="Password"  inputStyleClass="w-full"
+                    inputId="Password-input">
+                    <ng-template pTemplate="footer">
+                        <p-divider></p-divider>
+                        <p id="registerForm-password-requirements-header" class="mt-2" >Password must contain</p>
+                        <ul id="registerForm-password-requirements" class="pl-2 ml-2 mt-0">
+                            <li>At least one lowercase</li>
+                            <li>At least one uppercase</li>
+                            <li>At least one numeric</li>
+                            <li>Minimum 8 characters</li>
+                        </ul>
+                    </ng-template>
+                </p-password>
+                <label for="Password-input">Password
+                    <span class="red">*</span>
+                </label>
+                <h6 class="error" *ngIf="ErrorMessagePssword ">{{ErrorTextPassword}}</h6>
+            </span>
+
+            <span  class="p-float-label mb-8"  >
+                <p-password styleClass="w-full" formControlName="ConfirmPassword"  inputStyleClass="w-full"
+                    inputId="Confirm-Password-input" [feedback]="false">
+                </p-password>
+                <label for="Confirm-Password-input">Confirm Password
+                    <span class="red">*</span>
+                </label>
+                <h6 class="error " *ngIf="ErrorMessageConfirmPassword ">{{ErrorTextConfirmPassword}}</h6>
+            </span>
+          
+        <div class="text-center">
+            <button pButton type="button" label="Sign Up"  
+            [disabled]="registerForm.invalid"    class="p-button-sm"></button>      
+        </div>
+
+    </section>
+</div>

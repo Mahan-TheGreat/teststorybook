@@ -43,9 +43,6 @@ const Template: Story<LoginComponent> = (args: LoginComponent) => ({
   props: args,
 });
 
-
-
-
 // export const Default = Template.bind({});
 // Default.args = {
 //   loginForm: new FormGroup<ILoginForm>({
@@ -62,12 +59,12 @@ const Template: Story<LoginComponent> = (args: LoginComponent) => ({
 //   })
 // };
 
-export const Valid = Template.bind({});
-Valid.args = {
+export const ValidLoginForm = Template.bind({});
+ValidLoginForm.args = {
 
 };
-export const Invalid = Template.bind({});
-Invalid.args = {
+export const InvalidLoginForm = Template.bind({});
+InvalidLoginForm.args = {
     ErrorMessage:true,
     ErrorTextUsername:'Username is required!' ,
     ErrorTextPassword:'Password is required!' 

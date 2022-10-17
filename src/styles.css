@@ -36,3 +36,8 @@ h2 {
 .w-full {
     width: 100%;
 }
+
+h6{
+    font-weight: lighter; 
+    padding: 0.em;
+ }
