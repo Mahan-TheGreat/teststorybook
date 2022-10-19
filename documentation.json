@@ -133,7 +133,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-bf5f7f7cfb370a07e6f56cea5cb7c91545e108284b3c4bd27aa950abde2d241c2d4b92bb79df4119713124e23bcada13d0011902ba44ffba2ae6bdeac16c62c9",
+            "id": "component-HeaderComponent-041ee3333e8208bd2f05c708b429a79f467f44dd1280fa79485e67d9d18800278469a07c847fd6ab18142f9bea86900f18c6ae3cb8825229748e4751d91325ed",
             "file": "src/app/components/Header/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -160,6 +160,24 @@
                     "decorators": []
                 },
                 {
+                    "name": "notificationCount",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "showUserName",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "user",
                     "defaultValue": "''",
                     "deprecated": false,
@@ -173,12 +191,12 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "ngOnInit",
+                    "name": "handleClick",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 17,
+                    "line": 23,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -190,27 +208,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.css']\n})\nexport class HeaderComponent implements OnInit {\n\n@Input()\n  user=''\n\n  @Input()\n  isLoggedIn=false\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.css']\n})\nexport class HeaderComponent {\n\n@Input()\n  user='';\n\n  @Input()\n  isLoggedIn=false;\n\n  @Input()\n  showUserName=true;\n\n  @Input()\n  notificationCount=1;\n\n\n  handleClick(){\n    this.isLoggedIn=!this.isLoggedIn;\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "header{\r\n    width: 100vw;\r\n    height:10vh;\r\n    padding: 0.1em;\r\n    background-color: black;\r\n    color:snow;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n}\r\n\r\nheader ul{\r\n    \r\n    display: flex;\r\n    justify-content: space-around;\r\n    width: 60%;\r\n}\r\n\r\nheader ul li{\r\n    list-style: none;\r\n}",
+                    "data": "header{\r\n    width: 100vw;\r\n    height:10vh;\r\n    padding: 0.1em;\r\n    background-color: bisque;\r\n    color:black;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n}\r\n\r\nheader ul{\r\n    \r\n    display: flex;\r\n    justify-content: space-around;\r\n    width: 60%;\r\n}\r\n\r\nheader ul li{\r\n    list-style: none;\r\n    cursor: pointer;\r\n}\r\n\r\n#header-user-status-logged{\r\n    font-weight: 700;\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n    align-items: center;\r\n}\r\n\r\n#header-user-status-logged span{\r\n    background-color: aliceblue;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    color:purple;\r\n    padding: 0.2em;;\r\n    border-radius: 15px;\r\n    width: 40px;\r\n    height: 40px;\r\n    margin-right: 0.5em;\r\n}\r\n\r\n.header-user-status-button{\r\n    margin-left: 1em;\r\n}\r\n\r\n#userPicture-nav-bar{\r\n    position: relative;\r\n}\r\n\r\n#userPicture-nav-bar-notificationCount{\r\n    position: absolute;\r\n    top: -1px;\r\n    right: -1px;\r\n    color:firebrick;\r\n}",
                     "styleUrl": "./header.component.css"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 14
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<header>\n    <ul>\n        <li>Link1</li>\n        <li>Link1</li>\n        <li>Link1</li>\n        <li>Link1</li>\n    </ul>\n    <div>\n        <span *ngIf=\"isLoggedIn\">\n             {{user}}\n            <span id=\"userPicture-nav-bar\"></span>\n            <button pButton type=\"button\" label=\"Log Out\"  \n              class=\"p-button-sm\"></button>\n        </span>\n        <span *ngIf=\"!isLoggedIn\">\n            <button pButton type=\"button\" label=\"Log In\"  \n              class=\"p-button-sm\"></button>\n        </span>\n        \n    </div>\n\n\n</header>"
+            "templateData": "<header>\n    <ul>\n        <li><a>Link1</a></li>\n        <li><a>Link2</a></li>\n        <li><a>Link3</a></li>\n        <li><a>Link4</a></li>\n    </ul>\n    <div id=\"header-user-status\">\n        <span id=\"header-user-status-logged\" *ngIf=\"isLoggedIn\">\n            <span id=\"userPicture-nav-bar\">PP<p id=\"userPicture-nav-bar-notificationCount\">{{notificationCount}}</p></span>\n             <p *ngIf=\"showUserName\">{{user}} </p>\n            <button pButton  type=\"button\" label=\"Log Out\" (click)=\"handleClick()\"  \n              class=\"p-button-sm header-user-status-button \"></button>\n        </span>\n        <span *ngIf=\"!isLoggedIn\">\n            <button pButton type=\"button\" label=\"Log In\" (click)=\"handleClick()\" \n              class=\"p-button-sm header-user-status-button\"></button>\n        </span>\n        \n    </div>\n\n\n</header>"
         },
         {
             "name": "LoginComponent",
@@ -679,7 +686,7 @@
                 "name": "LoggedInHeader",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/header.stories..ts",
+                "file": "src/stories/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -689,7 +696,7 @@
                 "name": "NotLoggedInHeader",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/header.stories..ts",
+                "file": "src/stories/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -708,11 +715,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/header.stories..ts",
+                "file": "src/stories/login.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<LoginComponent>",
+                "defaultValue": "(args: LoginComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -728,11 +735,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/login.stories.ts",
+                "file": "src/stories/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<LoginComponent>",
-                "defaultValue": "(args: LoginComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "ValidLoginForm",
@@ -868,12 +875,12 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/stories/header.stories..ts": [
+            "src/stories/header.stories.ts": [
                 {
                     "name": "LoggedInHeader",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/header.stories..ts",
+                    "file": "src/stories/header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -883,7 +890,7 @@
                     "name": "NotLoggedInHeader",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/header.stories..ts",
+                    "file": "src/stories/header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -893,7 +900,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/header.stories..ts",
+                    "file": "src/stories/header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<HeaderComponent>",
@@ -938,7 +945,7 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -989,7 +996,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/header.stories..ts",
+                "filePath": "src/stories/header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -999,7 +1006,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/header.stories..ts",
+                "filePath": "src/stories/header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1009,7 +1016,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/header.stories..ts",
+                "filePath": "src/stories/header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 
 import LoginComponent from 'src/app/components/Login/login.component';
 import { RegisterComponent } from './components/Register/register.component';
+import { HeaderComponent } from './components/Header/header/header.component';
+import { CardComponent } from './components/card/card.component';
 
 
 // primeng imports
@@ -21,7 +23,9 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
-import { HeaderComponent } from './components/Header/header/header.component'
+import {ImageModule} from 'primeng/image';
+
+
 
 
 
@@ -30,7 +34,8 @@ import { HeaderComponent } from './components/Header/header/header.component'
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    CardComponent,
     ],
   imports: [
     BrowserModule,
@@ -43,6 +48,8 @@ import { HeaderComponent } from './components/Header/header/header.component'
     InputTextModule,
     PasswordModule,
     DividerModule,
+    ImageModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

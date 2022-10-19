@@ -6,9 +6,6 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from 'src/app/components/Header/header/header.component';
 import { ButtonModule } from 'primeng/button';
 
-
-
-// More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
   title: 'Header/NavigationBar',
   component: HeaderComponent,
@@ -19,12 +16,9 @@ export default {
       imports: [
         CommonModule,
         ButtonModule
-       
-
       ]
     })
   ],
-  // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
   argTypes: {
   
   },

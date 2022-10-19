@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class HeaderComponent {
 
 @Input()
-  user='';
+  user='John Doe';
 
   @Input()
   isLoggedIn=false;
@@ -17,7 +17,7 @@ export class HeaderComponent {
   showUserName=true;
 
   @Input()
-  notificationCount=1;
+  notificationCount=5;
 
 
   handleClick(){

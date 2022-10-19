@@ -7,8 +7,8 @@
     </ul>
     <div id="header-user-status">
         <span id="header-user-status-logged" *ngIf="isLoggedIn">
+            <p id="header-user-status-username" *ngIf="showUserName">{{user}} </p>
             <span id="userPicture-nav-bar">PP<p id="userPicture-nav-bar-notificationCount">{{notificationCount}}</p></span>
-             <p *ngIf="showUserName">{{user}} </p>
             <button pButton  type="button" label="Log Out" (click)="handleClick()"  
               class="p-button-sm header-user-status-button "></button>
         </span>
