@@ -1,0 +1,11 @@
+<div class="chart" *ngIf="chartBar">
+    <h5>Bar Chart</h5>
+    <p-chart type="bar" [data]="basicData" ></p-chart>
+</div>
+
+<div class="chart" *ngIf="!chartBar">
+    <h5>Pie Chart</h5>
+    <p-chart type="pie" [data]="data"></p-chart>
+</div>
+
+

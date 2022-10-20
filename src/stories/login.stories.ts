@@ -9,6 +9,7 @@ import LoginComponent, { ILoginForm } from 'src/app/components/Login/login.compo
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CommonModule } from '@angular/common';
+import { CardModule } from 'primeng/card';
 
 
 
@@ -28,6 +29,7 @@ export default {
         DividerModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
+        CardModule
 
       ]
     })

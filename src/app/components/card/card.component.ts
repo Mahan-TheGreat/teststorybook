@@ -13,7 +13,7 @@ export class CardComponent implements OnInit {
   imageSource = "assets/testImage.jpg";
 
   @Input()
-  pricingCard = true;
+  pricingCard = false;
 
   @Input()
   pricingCardTitle = 'Package1';
@@ -36,7 +36,7 @@ export class CardComponent implements OnInit {
   showImageCardText = true;
 
   @Input()
-  imageCardText = 'This is the card text.';
+  imageCardText = 'This is Image card text.';
 
   @Input()
   showCardButton = true;
@@ -45,10 +45,8 @@ export class CardComponent implements OnInit {
   showMainCardText = false;
 
   @Input()
-  mainCardText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  changeView(){
-    this.pricingCard = !this.pricingCard;
-  }
+  mainCardText = 'Main Card Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+
   ngOnInit(): void {
   }
 

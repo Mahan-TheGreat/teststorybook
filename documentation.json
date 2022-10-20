@@ -129,11 +129,246 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!-- <app-login></app-login> -->\r\n<!-- <app-register></app-register> -->\r\n<app-header></app-header>"
+            "templateData": "<!-- <app-login></app-login> -->\r\n<!-- <app-register></app-register> -->\r\n<!-- <app-header></app-header> -->\r\n<app-card></app-card>"
+        },
+        {
+            "name": "CardComponent",
+            "id": "component-CardComponent-1b044a77e772a8833730fc86cbea44e18f8ed69bcf6157c9fccb89c2bcf3b6e1e2eff41fede2b37444fc9ed6765c0f971cefc4f50987519be033478f43fb4a6b",
+            "file": "src/app/components/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card",
+            "styleUrls": [
+                "./card.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "cardTitle",
+                    "defaultValue": "'Card Title'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "imageCardText",
+                    "defaultValue": "'This is Image card text.'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "mainCardText",
+                    "defaultValue": "'Main Card Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 48,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "pricingCard",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "pricingCardTitle",
+                    "defaultValue": "'Package1'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "showCardButton",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 42,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showCardImage",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showCardTitle",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showImageCardText",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showMainCardText",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 45,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showPricingCardButton",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "imageSource",
+                    "defaultValue": "\"assets/testImage.jpg\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n\n\n@Component({\n  selector: 'app-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.css']\n})\nexport class CardComponent implements OnInit {\n\n  constructor() { }\n  imageSource = \"assets/testImage.jpg\";\n\n  @Input()\n  pricingCard = false;\n\n  @Input()\n  pricingCardTitle = 'Package1';\n\n  @Input()\n  showPricingCardButton = true;\n\n  //normal card\n\n  @Input()\n  showCardTitle = true;\n\n  @Input()\n  cardTitle = 'Card Title';\n\n  @Input()\n  showCardImage = true;\n\n  @Input()\n  showImageCardText = true;\n\n  @Input()\n  imageCardText = 'This is Image card text.';\n\n  @Input()\n  showCardButton = true;\n\n  @Input()\n  showMainCardText = false;\n\n  @Input()\n  mainCardText = 'Main Card Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "#card-container{\r\n    padding: 0.1em;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n.card{\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 0.1em;\r\n    margin-top:1em;\r\n    width:400px;\r\n    background-color: rgba(0,0,0,0,1);\r\n    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.6);\r\n    border-radius: 5px;\r\n}\r\n\r\n\r\n\r\n.card-image-div{\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    text-align: center;\r\n    height: 80%;\r\n\r\n}\r\n\r\n.card-title{\r\n    text-align: center;\r\n    margin:0.5em;\r\n    color: rgba(0,180,20,1);\r\n    font-size: larger;\r\n}\r\n\r\n.main-card-text{\r\n    margin:1em 1em;\r\n    max-width: 99%;\r\n    display: flex;\r\n    flex-wrap:wrap;\r\n    overflow: wrap;\r\n    word-wrap: break-word;\r\n    color:gray;\r\n    font-weight: lighter;\r\n}\r\n\r\n.card-button{\r\n    text-align: center;\r\n    padding: 0.1em;\r\n    margin: 0.5em;\r\n}\r\n\r\n.pricing-card{\r\n    text-transform: uppercase;\r\n    letter-spacing: 0.1em;\r\n    word-spacing: 0.3em;\r\n}\r\n\r\n.pricing-card ul{\r\n    background-color: rgba(1,50, 10, 0.2);\r\n}\r\n\r\n.pricing-card ul li{\r\n    padding: 0.5em;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./card.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div id=\"card-container\">\n \n    <div class=\"card pricing-card\" *ngIf=\"pricingCard\">\n        <h5 class=\"card-title \">{{pricingCardTitle}}</h5>\n        <ul>\n            <li>\n                <span>Data Storage</span><span> 1GB/Month</span>\n            </li>\n            <li>\n                <span>Traffic Limit </span><span> 1000/Month</span>\n            </li>\n            <li>\n                <span>Support Provided</span> <span> 8hrs/Day</span>\n            </li>\n        </ul>\n        <div class=\"card-button\">\n            <button class=\"p-button-sm\" *ngIf=\"showPricingCardButton\" pButton>Details</button>\n        </div>\n    </div>\n\n    <div class=\"card\" *ngIf=\"!pricingCard\">\n        <h5 class=\"card-title\" *ngIf=\"showCardTitle\">{{cardTitle}}</h5>\n        <div class=\"card-image-div\" *ngIf=\"showCardImage\">\n            <p-image class=\"card-image-container\" imageClass=\"card-image\" *ngIf=\"showCardImage\" [src]=\"imageSource\" alt=\"Image\" width=\"350\" height=\"200\"></p-image><br/>\n            <small *ngIf=\"showImageCardText\">{{imageCardText}}</small>\n        </div>\n        \n\n        <h6 class=\"main-card-text\" *ngIf=\"showMainCardText\">{{mainCardText}}</h6>\n\n        <div class=\"card-button\">\n            <button class=\"p-button-sm p-button-success\" *ngIf=\"showCardButton\" pButton>Click me</button>\n        </div>\n    </div>\n    \n \n</div>\n"
+        },
+        {
+            "name": "ChartComponent",
+            "id": "component-ChartComponent-1395531c1d996f9b042cfb594ff1fcc7a275cbd4d28908b87f18da1f1248a39fd904dea3ad6f3180e74a009b38a093adeab4bc5b2f563ec5e5924e5c9c37604a",
+            "file": "src/app/components/chart/chart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-chart",
+            "styleUrls": [
+                "./chart.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./chart.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-chart',\n  templateUrl: './chart.component.html',\n  styleUrls: ['./chart.component.css']\n})\nexport class ChartComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./chart.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>chart works!</p>\n"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-041ee3333e8208bd2f05c708b429a79f467f44dd1280fa79485e67d9d18800278469a07c847fd6ab18142f9bea86900f18c6ae3cb8825229748e4751d91325ed",
+            "id": "component-HeaderComponent-0a4b2ecbdac75772a2db514460738ab223f9a2ed9f9d5d21aebe51ffa797de6e05fe3aae968246bd77f4eac1bb288c258647323d3541158799b1463a7c4d45f5",
             "file": "src/app/components/Header/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -161,7 +396,7 @@
                 },
                 {
                     "name": "notificationCount",
-                    "defaultValue": "1",
+                    "defaultValue": "5",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 20,
@@ -179,7 +414,7 @@
                 },
                 {
                     "name": "user",
-                    "defaultValue": "''",
+                    "defaultValue": "'John Doe'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
@@ -208,16 +443,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.css']\n})\nexport class HeaderComponent {\n\n@Input()\n  user='';\n\n  @Input()\n  isLoggedIn=false;\n\n  @Input()\n  showUserName=true;\n\n  @Input()\n  notificationCount=1;\n\n\n  handleClick(){\n    this.isLoggedIn=!this.isLoggedIn;\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.css']\n})\nexport class HeaderComponent {\n\n@Input()\n  user='John Doe';\n\n  @Input()\n  isLoggedIn=false;\n\n  @Input()\n  showUserName=true;\n\n  @Input()\n  notificationCount=5;\n\n\n  handleClick(){\n    this.isLoggedIn=!this.isLoggedIn;\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "header{\r\n    width: 100vw;\r\n    height:10vh;\r\n    padding: 0.1em;\r\n    background-color: bisque;\r\n    color:black;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n}\r\n\r\nheader ul{\r\n    \r\n    display: flex;\r\n    justify-content: space-around;\r\n    width: 60%;\r\n}\r\n\r\nheader ul li{\r\n    list-style: none;\r\n    cursor: pointer;\r\n}\r\n\r\n#header-user-status-logged{\r\n    font-weight: 700;\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n    align-items: center;\r\n}\r\n\r\n#header-user-status-logged span{\r\n    background-color: aliceblue;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    color:purple;\r\n    padding: 0.2em;;\r\n    border-radius: 15px;\r\n    width: 40px;\r\n    height: 40px;\r\n    margin-right: 0.5em;\r\n}\r\n\r\n.header-user-status-button{\r\n    margin-left: 1em;\r\n}\r\n\r\n#userPicture-nav-bar{\r\n    position: relative;\r\n}\r\n\r\n#userPicture-nav-bar-notificationCount{\r\n    position: absolute;\r\n    top: -1px;\r\n    right: -1px;\r\n    color:firebrick;\r\n}",
+                    "data": "header{\r\n    width: 100vw;\r\n    height:50px;\r\n    padding: 0.1em;\r\n    background-color: bisque;\r\n    color:black;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n}\r\n\r\nheader ul{\r\n    \r\n    display: flex;\r\n    justify-content: space-around;\r\n    width: 60%;\r\n}\r\n\r\nheader ul li{\r\n    padding: 0.2em;\r\n    border-radius:5px;\r\n    background-color: aliceblue;\r\n    list-style: none;\r\n    cursor: pointer;\r\n    transition: all 0.1s ease-in;\r\n}\r\n\r\nheader ul li:hover{\r\n    background-color:blue;\r\n    color:white;\r\n}\r\n\r\n#header-user-status-logged{\r\n    font-weight: 600;\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n    align-items: center;\r\n}\r\n\r\n#header-user-status-username{\r\nmargin-right:5px;\r\nfont-size: small;\r\ncursor:default;\r\n}\r\n\r\n#header-user-status-logged span{\r\n    background-color: aliceblue;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    color:purple;\r\n    padding: 0.2em;\r\n    border-radius: 15px;\r\n    width: 40px;\r\n    height: 40px;\r\n    margin-right: 0.5em;\r\n}\r\n\r\n.header-user-status-button{\r\n    margin-left: 1em;\r\n    padding: 0.2em;\r\n}\r\n\r\n#userPicture-nav-bar{\r\n    position: relative;\r\n    cursor:pointer;\r\n}\r\n\r\n#userPicture-nav-bar-notificationCount{\r\n    position: absolute;\r\n    top: -1px;\r\n    right: -1px;\r\n    color:firebrick;\r\n}",
                     "styleUrl": "./header.component.css"
                 }
             ],
             "stylesData": "",
-            "templateData": "<header>\n    <ul>\n        <li><a>Link1</a></li>\n        <li><a>Link2</a></li>\n        <li><a>Link3</a></li>\n        <li><a>Link4</a></li>\n    </ul>\n    <div id=\"header-user-status\">\n        <span id=\"header-user-status-logged\" *ngIf=\"isLoggedIn\">\n            <span id=\"userPicture-nav-bar\">PP<p id=\"userPicture-nav-bar-notificationCount\">{{notificationCount}}</p></span>\n             <p *ngIf=\"showUserName\">{{user}} </p>\n            <button pButton  type=\"button\" label=\"Log Out\" (click)=\"handleClick()\"  \n              class=\"p-button-sm header-user-status-button \"></button>\n        </span>\n        <span *ngIf=\"!isLoggedIn\">\n            <button pButton type=\"button\" label=\"Log In\" (click)=\"handleClick()\" \n              class=\"p-button-sm header-user-status-button\"></button>\n        </span>\n        \n    </div>\n\n\n</header>"
+            "templateData": "<header>\n    <ul>\n        <li><a>Link1</a></li>\n        <li><a>Link2</a></li>\n        <li><a>Link3</a></li>\n        <li><a>Link4</a></li>\n    </ul>\n    <div id=\"header-user-status\">\n        <span id=\"header-user-status-logged\" *ngIf=\"isLoggedIn\">\n            <p id=\"header-user-status-username\" *ngIf=\"showUserName\">{{user}} </p>\n            <span id=\"userPicture-nav-bar\">PP<p id=\"userPicture-nav-bar-notificationCount\">{{notificationCount}}</p></span>\n            <button pButton  type=\"button\" label=\"Log Out\" (click)=\"handleClick()\"  \n              class=\"p-button-sm header-user-status-button \"></button>\n        </span>\n        <span *ngIf=\"!isLoggedIn\">\n            <button pButton type=\"button\" label=\"Log In\" (click)=\"handleClick()\" \n              class=\"p-button-sm header-user-status-button\"></button>\n        </span>\n        \n    </div>\n\n\n</header>"
         },
         {
             "name": "LoginComponent",
@@ -538,13 +773,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-4288fd44840ea97dd7f834ff572a81a9b61ee53ecd12f17c8ba35ba647ff474fc2ae8ccff0f201102d5b9a6e61c4ec60a7e3287a21e0bf59e0a181126fda703d",
+            "id": "module-AppModule-3297ef81a679143f57fb9b97d5a2fcd27a6c2955dbd115fe47797a94e0315e91bec9059651b4e8f3e970aff8966eb6b99f623bac1199499ad603863c810b97c4",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { BrowserModule } from '@angular/platform-browser';\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n\n// Component Imports\n\nimport LoginComponent from 'src/app/components/Login/login.component';\nimport { RegisterComponent } from './components/Register/register.component';\n\n\n// primeng imports\n\nimport { ButtonModule } from 'primeng/button';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { PasswordModule } from 'primeng/password';\nimport { DividerModule } from 'primeng/divider';\nimport { HeaderComponent } from './components/Header/header/header.component'\n\n\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    LoginComponent,\n    RegisterComponent,\n    HeaderComponent\n    ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    AppRoutingModule,\n    FormsModule,\n    ReactiveFormsModule,\n    BrowserAnimationsModule,\n    ButtonModule,\n    InputTextModule,\n    PasswordModule,\n    DividerModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { BrowserModule } from '@angular/platform-browser';\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\n\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n\n// Component Imports\n\nimport LoginComponent from 'src/app/components/Login/login.component';\nimport { RegisterComponent } from './components/Register/register.component';\nimport { HeaderComponent } from './components/Header/header/header.component';\nimport { CardComponent } from './components/card/card.component';\n\n\n// primeng imports\n\nimport { ButtonModule } from 'primeng/button';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { PasswordModule } from 'primeng/password';\nimport { DividerModule } from 'primeng/divider';\nimport {ImageModule} from 'primeng/image';\nimport { ChartComponent } from './components/chart/chart.component';\n\n\n\n\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    LoginComponent,\n    RegisterComponent,\n    HeaderComponent,\n    CardComponent,\n    ChartComponent,\n    ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    AppRoutingModule,\n    FormsModule,\n    ReactiveFormsModule,\n    BrowserAnimationsModule,\n    ButtonModule,\n    InputTextModule,\n    PasswordModule,\n    DividerModule,\n    ImageModule\n\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -555,6 +790,12 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "CardComponent"
+                        },
+                        {
+                            "name": "ChartComponent"
                         },
                         {
                             "name": "HeaderComponent"
@@ -663,6 +904,16 @@
                 "defaultValue": "{\n  production: false\n}"
             },
             {
+                "name": "imageCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "InvalidLoginForm",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -703,6 +954,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "pricingCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -715,11 +976,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/login.stories.ts",
+                "file": "src/stories/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<LoginComponent>",
-                "defaultValue": "(args: LoginComponent) => ({\r\n  props: args,\r\n})"
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args: CardComponent) => ({\r\n    props:args\r\n})"
             },
             {
                 "name": "Template",
@@ -735,11 +996,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/login.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<LoginComponent>",
+                "defaultValue": "(args: LoginComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<HeaderComponent>",
                 "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "textCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "ValidLoginForm",
@@ -809,6 +1090,48 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/stories/card.stories.ts": [
+                {
+                    "name": "imageCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "pricingCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CardComponent>",
+                    "defaultValue": "(args: CardComponent) => ({\r\n    props:args\r\n})"
+                },
+                {
+                    "name": "textCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "src/stories/login.stories.ts": [
@@ -976,6 +1299,24 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/chart/chart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ChartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "src/environments/environment.prod.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -991,6 +1332,46 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "imageCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "pricingCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "textCard",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

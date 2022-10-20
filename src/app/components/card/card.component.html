@@ -1,6 +1,6 @@
 <div id="card-container">
  
-    <div class="card pricing-card" *ngIf="pricingCard">
+    <!-- <div class="card pricing-card" *ngIf="pricingCard">
         <h5 class="card-title ">{{pricingCardTitle}}</h5>
         <ul>
             <li>
@@ -16,23 +16,56 @@
         <div class="card-button">
             <button class="p-button-sm" *ngIf="showPricingCardButton" pButton>Details</button>
         </div>
-    </div>
+    </div> -->
 
-    <div class="card" *ngIf="!pricingCard">
+    <!-- <div class="card" *ngIf="!pricingCard">
         <h5 class="card-title" *ngIf="showCardTitle">{{cardTitle}}</h5>
         <div class="card-image-div" *ngIf="showCardImage">
-            <p-image class="card-image-container" imageClass="card-image" *ngIf="showCardImage" [src]="imageSource" alt="Image" width="350" height="200"></p-image>
-            <p *ngIf="showImageCardText">{{imageCardText}}</p>
+            <p-image class="card-image-container" imageClass="card-image" *ngIf="showCardImage" [src]="imageSource" alt="Image" width="350" height="200"></p-image><br/>
+            <small *ngIf="showImageCardText">{{imageCardText}}</small>
         </div>
         
 
-        <h6 class="main-card-text">{{mainCardText}}</h6>
+        <h6 class="main-card-text" *ngIf="showMainCardText">{{mainCardText}}</h6>
 
         <div class="card-button">
             <button class="p-button-sm p-button-success" *ngIf="showCardButton" pButton>Click me</button>
         </div>
+    </div> -->
+
+    <div *ngIf="!pricingCard">
+        <p-card  class="card"  header={{cardTitle}} subheader={{imageCardText}} [style]="{width: '360px'}" styleClass="p-card-shadow">
+            <ng-template pTemplate="header">
+                <img alt="Card-Image" src="assets/testImage.jpg">
+            </ng-template>
+            <p *ngIf="showImageCardText">{{mainCardText}}</p>
+            <ng-template pTemplate="footer">
+                <p-button  *ngIf="showCardButton" label="Click"></p-button>
+            </ng-template>
+           
+        </p-card>
     </div>
+    
+    <div *ngIf="pricingCard">
+        <p-card  class="card pricing-card"  header={{pricingCardTitle}}  [style]="{width: '360px'}" styleClass="p-card-shadow">
+            <ul>
+                <li>
+                    <span>Data Storage</span><span> 1GB/Month</span>
+                </li>
+                <li>
+                    <span>Traffic Limit </span><span> 1000/Month</span>
+                </li>
+                <li>
+                    <span>Support Provided</span> <span> 8hrs/Day</span>
+                </li>
+            </ul>
+            <ng-template pTemplate="footer">
+                <p-button *ngIf="showCardButton" label="Details"></p-button>
+            </ng-template>
+           
+        </p-card>
+    </div>
+   
     
  
 </div>
-<button class="p-button-sm p-button-success"  (click)='changeView()' pButton>Change Card Type</button>
