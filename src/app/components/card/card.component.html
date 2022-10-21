@@ -35,8 +35,8 @@
 
     <div *ngIf="!pricingCard">
         <p-card  class="card"  header={{cardTitle}} subheader={{imageCardText}} [style]="{width: '360px'}" styleClass="p-card-shadow">
-            <ng-template pTemplate="header">
-                <img alt="Card-Image" src="assets/testImage.jpg">
+            <ng-template  pTemplate="header">
+                <img *ngIf="showCardImage" alt="Card-Image" src="assets/testImage.jpg">
             </ng-template>
             <p *ngIf="showImageCardText">{{mainCardText}}</p>
             <ng-template pTemplate="footer">
@@ -60,11 +60,13 @@
                 </li>
             </ul>
             <ng-template pTemplate="footer">
-                <p-button *ngIf="showCardButton" label="Details"></p-button>
+                <p-button *ngIf="showPricingCardButton" label="Details"></p-button>
             </ng-template>
            
         </p-card>
     </div>
+
+   
    
     
  

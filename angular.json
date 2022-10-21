@@ -29,7 +29,7 @@
               "node_modules/primeng/resources/themes/mdc-light-indigo/theme.css"
             ],
             "scripts": [
-              "../node_modules/chart.js/dist/chart.js"
+              "node_modules/chart.js/dist/chart.js"
             ]
           },
           "configurations": {
@@ -111,6 +111,9 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/primeng.min.css",              
               "node_modules/primeng/resources/themes/mdc-light-indigo/theme.css"
+            ],
+            "scrips":[
+              "node_modules/chart.js/dist/chart.js"
             ]
           }
         },

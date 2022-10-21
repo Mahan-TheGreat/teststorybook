@@ -35,7 +35,7 @@ LoggedInHeader.args = {
     isLoggedIn:true,
     user:'John Doe',
     notificationCount:1,
-    showUserName:false
+    showUserName:true
 
 };
 export const NotLoggedInHeader = Template.bind({});

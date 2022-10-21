@@ -2,6 +2,7 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import { moduleMetadata } from "@storybook/angular";
 import { ChartModule } from "primeng/chart";
 import { ChartComponent } from "src/app/components/chart/chart.component";
+import { CommonModule } from '@angular/common';
 
 export default{
     title: 'Charts/Chart',
@@ -9,6 +10,7 @@ export default{
     decorators: [
         moduleMetadata({
             imports:[
+                CommonModule,
                 ChartModule
             ]
         })

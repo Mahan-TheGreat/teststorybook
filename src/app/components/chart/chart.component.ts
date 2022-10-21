@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css']
 })
-export class ChartComponent implements OnInit {
+export class ChartComponent {
 
   basicData = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -46,9 +46,8 @@ data = {
 
   @Input()
   chartBar=true;
-  constructor() { }
 
-  ngOnInit(): void {
+  changeChart(){
+    this.chartBar = !this.chartBar;
   }
-
 }
